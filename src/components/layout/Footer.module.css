@@ -1,0 +1,27 @@
+footer {
+	background-color: #222;
+	padding: 1em;
+}
+
+span {
+	color: #ffbb33;
+}
+p {
+	color: white;
+	text-align: center;
+}
+
+.footer_list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer_list li {
+	margin: 1.5em 0.5em;
+}
+
+.footer_list svg {
+	color: white;
+	font-size: 1.2em;
+}

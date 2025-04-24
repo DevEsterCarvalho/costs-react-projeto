@@ -1,4 +1,4 @@
-function NewProjetc() {
-	return <h1>NewProjetc</h1>;
+function NewProject() {
+	return <h1>NewProject</h1>;
 }
-export default NewProjetc;
+export default NewProject;
