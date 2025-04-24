@@ -1,9 +1,10 @@
 footer {
 	background-color: #222;
-	padding: 1em;
+	padding: 2em;
 }
 
-span {
+span,
+.footer_list svg:hover {
 	color: #ffbb33;
 }
 p {
@@ -18,7 +19,9 @@ p {
 }
 
 .footer_list li {
-	margin: 1.5em 0.5em;
+	margin: 1em;
+	margin-bottom: 2em;
+	list-style: none;
 }
 
 .footer_list svg {
