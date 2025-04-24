@@ -1,3 +1,7 @@
+Projeto de gerenciamento de projetos através do Curso de React Matheus Battisti pelo youtube.
+
+Tecnologias usadas: React, JavaScript, JSX, HTML e CSS.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
