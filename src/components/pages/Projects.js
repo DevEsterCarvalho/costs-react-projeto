@@ -1,5 +1,9 @@
-function Projects() {
-	return <h1>Projects</h1>;
-}
+import { useLocation } from "react-router-dom";
 
+function Projects() {
+	const location = useLocation();
+	const message = location.state?.message;
+
+	return <div>{message && <p>{message}</p>}</div>;
+}
 export default Projects;

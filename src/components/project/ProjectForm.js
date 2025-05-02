@@ -3,24 +3,71 @@ import Select from "../form/Select";
 import SubmitButton from "../form/SubmitButton";
 import styles from "./ProjectForm.module.css";
 
-function ProjectForm({ btnText }) {
+import { useEffect, useState } from "react";
+
+function ProjectForm({ handleSubmit, btnText, projectData }) {
+	const [categories, setCategories] = useState([]);
+	const [project, setProject] = useState(projectData || {});
+
+	useEffect(() => {
+		fetch("http://localhost:5000/categories", {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				setCategories(data);
+			})
+			.catch((err) => console.log(err));
+	}, []);
+
+	const submit = (e) => {
+		e.preventDefault();
+		handleSubmit(project);
+	};
+
+	function handleChange(e) {
+		setProject({ ...project, [e.target.name]: e.target.value });
+	}
+
+	function handleCategory(e) {
+		setProject({
+			...project,
+			category: {
+				id: e.target.value,
+				name: e.target.options[e.target.selectedIndex].text,
+			},
+		});
+	}
 	return (
-		<form className={styles.form}>
+		<form onSubmit={submit} className={styles.form}>
 			<Input
 				type="text"
 				text="Nome do Projeto"
-				placehoder="Insira o nome do projeto"
+				placeholder="Insira o nome do projeto"
 				name="name"
+				value={project.name ? project.name : ""}
+				handleOnChange={handleChange}
 			/>
 
 			<Input
 				type="number"
 				text="Orçamento do projeto"
-				placehoder="Insira o orçamento total"
+				placeholder="Insira o orçamento total"
 				name="budget"
+				value={project.budget ? project.budget : ""}
+				handleOnChange={handleChange}
 			/>
 
-			<Select name="category_id" text="Selecione a categoria" />
+			<Select
+				name="category_id"
+				text="Selecione a categoria"
+				options={categories}
+				value={project.category ? project.category.id : ""}
+				handleOnChange={handleCategory}
+			/>
 			<SubmitButton text={btnText} />
 		</form>
 	);
