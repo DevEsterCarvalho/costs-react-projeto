@@ -21,8 +21,11 @@ function NewProject() {
 			.then((data) => {
 				console.log(data);
 			})
-			.then((e) => navigate("/projects"), {
-				status: { message: "Projeto criado com sucesso!" },
+			.then((data) => {
+				console.log(data);
+				navigate("/projects", {
+					state: { message: "Projeto criado com sucesso!" },
+				});
 			})
 
 			.catch((err) => console.log(err));
