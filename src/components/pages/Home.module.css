@@ -18,9 +18,9 @@
 	color: grey;
 }
 
-span {
+.destaque_home {
 	padding: 0.1em;
-	background-color: black;
+	background-color: #222;
 }
 
 .container img {

@@ -6,7 +6,7 @@ function Home() {
 	return (
 		<section className={styles.container}>
 			<h1 className={styles.titulo_home}>
-				Bem vindo ao <span>Costs</span>
+				Bem vindo ao <span className={styles.destaque_home}>Costs</span>
 			</h1>
 			<p className={styles.subtitulo_home}>
 				Comece a gerenciar os seus projetos agora mesmo!
