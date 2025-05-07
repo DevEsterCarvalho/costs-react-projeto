@@ -3,11 +3,12 @@ footer {
 	padding: 2em;
 }
 
-span,
+.destaque_footer,
 .footer_list svg:hover {
 	color: #ffbb33;
 }
-p {
+
+.paragrafo_footer {
 	color: white;
 	text-align: center;
 }

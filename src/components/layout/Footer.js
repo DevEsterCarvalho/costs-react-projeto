@@ -15,8 +15,8 @@ function Footer() {
 					<FaLinkedin />
 				</li>
 			</ul>
-			<p>
-				<span>Costs</span> &copy; 2025
+			<p className={styles.paragrafo_footer}>
+				<span className={styles.destaque_footer}>Costs</span> &copy; 2025
 			</p>
 		</footer>
 	);
