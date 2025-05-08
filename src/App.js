@@ -7,6 +7,7 @@ import NewProject from "./components/pages/NewProject";
 import Container from "./components/layout/Container";
 import NavBar from "./components/layout/NavBar.js";
 import Footer from "./components/layout/Footer"; // ✅
+import Project from "./components/pages/Project.js";
 
 function App() {
 	console.log({
@@ -29,6 +30,7 @@ function App() {
 					<Route path="/company" element={<Company />} />
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/newproject" element={<NewProject />} />
+					<Route path="/project/:id" element={<Project />} />
 				</Routes>
 			</Container>
 			<Footer />
